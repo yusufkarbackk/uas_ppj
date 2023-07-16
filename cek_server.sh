@@ -20,6 +20,8 @@ while true; do
 	# Mengecek kode status HTTP dan melakukan tindakan sesuai
 	if [ $http_code -eq 200 ]; then
     		echo "Server is up and running"
+
+		#cek apakah sebelumnya server pernah mati
 		if [ "$IS_TIME_STARTED" = "true" ]; then
 			end_time=$(date +%s)
 			duration=$((end_time - $START_TIME))
